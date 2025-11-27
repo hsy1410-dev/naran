@@ -1,142 +1,190 @@
-/* RESET */
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
 }
-
 html,
 body,
 #root {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  min-height: 100%;
-  font-family: "Pretendard", sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "pretendard";
 }
 
-/* ===============================
-   1. 배경 & 전체 컨테이너
-================================*/
+/* 전체 배경 */
 .배경화면 {
   width: 100%;
   min-height: 100vh;
   background-color: #7fad98;
-  display: flex;
   flex-direction: column;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 40px 10px;
-  gap: 20px;
+  padding: 60px 0;
 }
 
-/* ===============================
-   2. 로고
-================================*/
-.배경화면 img {
-  width: clamp(120px, 30vw, 220px);
-  height: auto;
-  margin-bottom: 20px;
-}
-
-/* ===============================
-   3. 말풍선 묶음
-================================*/
+/* 말풍선 묶음 */
 .말풍선묶음 {
+  position: relative;
+  width: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 60px;
 }
 
 .말1, .말2 {
-  width: clamp(180px, 55vw, 280px);
+  width: clamp(160px, 32vw, 280px);
   height: auto;
+  position: relative;
+  left: 0;
 }
 
-/* ===============================
-   4. 초록 네모 카드
-================================*/
+/* 초록 박스 */
 .초록네모 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
   width: 90%;
-  max-width: 800px;
-  padding: 18px;
+  max-width: 1100px;
+  min-height: auto;
   background: linear-gradient(135deg, #6a8a7a, #5a7564);
-  border-radius: 22px;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.25);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:12px;
+  flex-wrap:wrap;
+  padding: 20px 20px;
+  margin: 0 auto;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .왼쪽 img {
-  width: clamp(70px, 25vw, 140px);
+  width: clamp(120px, 25vw, 200px);
   height: auto;
 }
+
 .오른쪽전체 {
-  text-align: left;
   flex: 1;
-}
-.title {
-  font-size: clamp(25px, 5vw, 45px);
-  font-weight: 800;
-}
-.sub {
-  font-size: clamp(18px, 3.2vw, 28px);
-}
-.smallText {
-  font-size: clamp(14px, 2vw, 20px);
-}
-
-/* ===============================
-   5. 세 이미지 성과
-================================*/
-.세이미지 {
+  margin-left: 3vw;
   display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin: 20px auto;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  text-align:left;
 }
 
+/* 제목 */
+.title {
+  font-size: clamp(28px, 6vw, 52px);
+  font-weight: 900;
+}
+.제로 {
+  color: aquamarine;
+}
+.점 {
+  font-size: clamp(10px, 1.8vw, 25px);
+  position: relative;
+  top: 5px;
+  left: -4vw;
+}
+
+/* 부제 */
+.sub {
+  font-size: clamp(22px, 4vw, 46px);
+  font-weight: 700;
+  margin-top: -5px;
+}
+
+/* 아래 문장 */
+.smallText {
+  font-size: clamp(16px, 2vw, 26px);
+  color: #e9e9e9;
+}
+
+/* 오른쪽 화살표 */
+.화살표영역 .arrow {
+  width: clamp(40px, 6vw, 80px);
+  height: auto;
+  display: block;
+}
+
+/* 흰색박스 */
+.흰색박스 {
+  background-color: #ffffff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: 80px;
+}
+
+.개인{
+  font-size: clamp(30px,6vw,50px);
+  font-weight: 600;
+  color:rgb(110, 183, 150) ;
+  margin-top: 30px;
+}
+.만나{
+  font-size: clamp(30px,6vw,50px);
+  font-weight: 800;
+  color:rgb(110, 183, 150) ;
+  margin-top: -20px;
+}
+
+/* 세이미지 */
+.세이미지{
+  display:flex;
+  gap: clamp(10px, 4vw, 30px);
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
 .세이미지 img {
   width: clamp(60px, 22vw, 130px);
   height: auto;
 }
 
-/* ===============================
-   6. 까만 박스 섹션
-================================*/
+/* 까만박스 */
 .까만박스 {
+  background-color:#000;
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  padding: 20px 0;
-  background-color: #111;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height:200px;
+  overflow: hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px 0;
 }
-.오직 {
-  font-size: clamp(22px, 5vw, 28px);
-  color: white;
-  margin-bottom: 12px;
-}
-.무료상담 {
-  width: clamp(180px, 40vw, 320px);
+.점2{ color:#ffffff;}
+.오직{color: #ffffff; font-size: clamp(24px,6vw,50px); }
+.무료상담{
+  width: clamp(200px, 55vw, 440px);
   height: auto;
+  position: relative;
+  margin: 6px 0;
 }
-.손 {
-  width: clamp(100px, 28vw, 180px);
+.손{
+  width: clamp(100px, 25vw, 200px);
+  height: auto;
+  position: relative;
+  margin: 6px 0;
 }
-.버튼 {
-  width: clamp(120px, 30vw, 200px);
+.버튼{
+  width: clamp(140px,32vw,260px);
+  height: auto;
+  position: relative;
+  margin: 6px 0;
 }
 
-/* ===============================
-   7. 2페이지 — 조정전 / 조정후
-================================*/
+/* 2페이지 */
 .큰흰색박스{
-  width: 100%;
   background-color: #ffffff;
-  padding: 25px 6px;
-  text-align: center;
+  width: 100%;
 }
 .어떻게1, .어떻게2, .감소1, .감소2 {
   font-size: clamp(20px, 4.7vw, 32px);
@@ -148,98 +196,104 @@ body,
   flex-wrap: wrap;
 }
 .조정전후 img {
-  width: clamp(160px, 42vw, 300px);
+  width: clamp(200px, 44vw, 360px);
+  height: auto;
 }
 
-/* ===============================
-   8. 카드 영역
-================================*/
+.배너{
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
+.원금박스{
+margin-top: 50px;
+}
+.회생1, .회생2{
+  color:#ffffff;
+  font-size: clamp(25px,6vw,45px);
+  font-weight: 800;
+}
+
+/* 카드 그룹 */
 .네모그룹 {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-  gap: 16px;
-  width: 90%;
-  margin: 40px auto;
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
 }
 .네모그룹 > div {
   background: #ffffff;
   border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+  padding: 18px 22px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
 }
 .카드제목 {
-  font-size: clamp(20px, 4vw, 28px);
-  font-weight: 800;
   color:#66c99c;
+  font-size: clamp(18px,4vw,30px);
+  font-weight: 800;
+  line-height: 1.2;
 }
 .카드내용 {
-  font-size: clamp(14px, 2vw, 20px);
-  color:#222;
+  color: black;
+  font-size: clamp(14px,3vw,20px);
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-/* ===============================
-   9. 상담창
-================================*/
-.상담창 {
-  background: #f2f2f2;
-  width: 100%;
-  padding: 50px 0;
-  text-align: center;
+/* 상담창 */
+
+.상담창{
+  background-color: rgb(238, 238, 238);
+  padding-top: 70px;
 }
-.상담제목 {
-  font-size: clamp(24px, 5vw, 40px);
+
+.상담제목{
   color: #66c99c;
-  margin-bottom: 12px;
+  font-size: clamp(28px, 6vw, 50px);
+  font-weight: 600;
 }
+
+.상담서론1,.상담서론2{
+  font-size: clamp(16px,4vw,25px);
+}
+
 .상담폼박스 {
-  width: 90%;
+  width: 92%;
   max-width: 680px;
-  background: white;
   margin: 0 auto;
   padding: 24px;
-  border-radius: 22px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+  text-align: center;
 }
 
 .입력그리드 {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-.상담폼 input, .상담폼 textarea {
-  padding: 14px;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  font-size: 15px;
-  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
 }
 
-/* ===============================
-   10. 애니메이션
-================================*/
-.hidden {
-  opacity: 0;
-  transition: .6s ease;
-}
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.fade-up.hidden {
-  transform: translateY(35px);
-}
-
-/* ===============================
-   11. 모바일 규칙
-================================*/
-@media (min-width: 800px) {
+@media (max-width: 680px) {
   .입력그리드 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
-  .무료상담 {
-    width: clamp(180px, 22vw, 300px);
-  }
-  .일부레이아웃 {
-    width: clamp(130px, 30vw, 260px);
+}
+
+/*********************************
+ 💥 모바일 핵심 정렬
+*********************************/
+@media (max-width: 680px) {
+  .무료상담, .손, .버튼 {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 8px auto;
   }
 }
