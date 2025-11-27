@@ -10,7 +10,7 @@ import 화살표 from "./pageicon/1page/butten.png"
 import 변제율 from"./pageicon/1page/1.png"
 import 즉시 from"./pageicon/1page/2.png"
 import 사후보정 from"./pageicon/1page/3.png"
-import 무료상담  from"./pageicon1page/free.png"
+import 무료상담  from"./pageicon/1page/free.png"
 import 버튼  from"./pageicon/1page/botten.png"
 import 손  from"./pageicon/1page/hand.png"
 /*----------------------------1페이지 끝!!!!!!!!!!---------------------------*/
