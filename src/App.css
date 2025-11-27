@@ -161,7 +161,7 @@ border-top-right-radius: 30px;
   z-index: 2;
 }
 .까만박스 {
-    background-image: url("../랜딩페이지아이콘/1page/배경.png");
+    background-image: url("./pageicon/1page/black.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
