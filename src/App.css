@@ -1,645 +1,245 @@
-*{
+/* RESET */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-align: center;
 }
-/* index.css 또는 App.css 맨 위에 */
+
 html,
 body,
 #root {
-  margin: 0;
-  padding: 0;
   width: 100%;
-  height: 100%; /* 부모가 100%여야 vh가 제대로 먹어 */
-  box-sizing: border-box;
-  font-family: "pretendard";
+  min-height: 100%;
+  font-family: "Pretendard", sans-serif;
 }
 
-/* ★ 여기에 절대 * { text-align: center } 이런 거 넣지 말기!! */
-
-/* 전체 배경 */
+/* ===============================
+   1. 배경 & 전체 컨테이너
+================================*/
 .배경화면 {
   width: 100%;
-  min-height: 100vh; /* 화면 높이 꽉 채우기 */
+  min-height: 100vh;
   background-color: #7fad98;
-flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* 가운데 정렬 */
-
-  padding: 60px 0;
-}
-
-/* 초록 박스 */
-.초록네모 {
-  width: 70%;
-  max-width: 1400px;
-  min-height: 240px;
-
-  background: linear-gradient(135deg, #6a8a7a, #5a7564);
-  border-radius: 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 20px 40px;
-  margin: 0 auto;
-
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-
-
-/* 왼쪽 이미지 */
-.왼쪽 img {
-  width: 20vw;     /* ⭐ 고정 px → 반응형 vw 로 변환 */
-  max-width: 240px;
-  min-width: 160px;
-  height: auto;
-}
-
-/* 가운데 텍스트 전체 */
-.오른쪽전체 {
-  flex: 1;
-  margin-left: 3vw;   /* ⭐ 고정 50px → 반응형 */
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  color: white;
+  align-items: center;
+  padding: 40px 10px;
+  gap: 20px;
 }
 
-/* 제목 */
-.title {
-  font-size: clamp(28px, 4vw, 52px); /* ⭐ 화면 크기에 따라 자동 조절 */
-  font-weight: 900;
-}
-
-.제로 {
-  color: aquamarine;
-}
-
-.점 {
-  font-size: clamp(10px, 1.8vw, 25px);
-  position: relative;
-  top: 5px;
-  left: -4vw;
-}
-
-/* 부제 */
-.sub {
-  font-size: clamp(22px, 3.2vw, 46px); 
-  font-weight: 700;
-  margin-top: -5px; /* 강한 -20px 제거 */
-}
-
-/* 아래 문장 */
-.smallText {
-  font-size: clamp(16px, 2vw, 26px);
-  color: #e9e9e9;
-  margin-top: -5px;
-}
-
-/* 오른쪽 화살표 */
-.화살표영역 .arrow {
-  width: clamp(40px, 6vw, 80px);
+/* ===============================
+   2. 로고
+================================*/
+.배경화면 img {
+  width: clamp(120px, 30vw, 220px);
   height: auto;
-  display: block;
+  margin-bottom: 20px;
 }
-.흰색박스 {
-  background-color: #ffffff;
- border-top-left-radius: 30px;
-border-top-right-radius: 30px;
-  margin-top: 80px;
-}
-.개인{
-  font-size: 50px;
-  font-weight: 600;
-  color:rgb(110, 183, 150) ;
-  margin-top: 30px;
-}
-.만나{
-  font-size: 50px;
-  font-weight: 800;
-  color:rgb(110, 183, 150) ;
-  margin-top: -20px;
-}
-.세이미지{
-  display:flex;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 80px;
-}
+
+/* ===============================
+   3. 말풍선 묶음
+================================*/
 .말풍선묶음 {
-  position: relative; 
-  width: 300px;       /* 두 말풍선이 들어갈 고정폭 */
-  margin: 0 auto; 
-  left: -100px; 
-  margin-bottom: 70px;   /* ⭐ 화면 가운데 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 }
 
-/* 왼쪽 말풍선 */
-.말1 {
-  width: 300px;
+.말1, .말2 {
+  width: clamp(180px, 55vw, 280px);
   height: auto;
-  position: relative;
-  z-index: 1;
-  display: block;
-  margin: 0 auto;     /* ⭐ 가운데 정렬 */
 }
 
-/* 오른쪽 말풍선 */
-.말2 {
-  width: 300px;
-  height: auto;
-  position: absolute;
-  top: 50px;          /* 겹치는 정도 */
-  left: 250px;         /* ⭐ 오른쪽으로 너무 안 치우치게 적당히 */
-  z-index: 2;
+/* ===============================
+   4. 초록 네모 카드
+================================*/
+.초록네모 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 90%;
+  max-width: 800px;
+  padding: 18px;
+  background: linear-gradient(135deg, #6a8a7a, #5a7564);
+  border-radius: 22px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.25);
 }
+.왼쪽 img {
+  width: clamp(70px, 25vw, 140px);
+  height: auto;
+}
+.오른쪽전체 {
+  text-align: left;
+  flex: 1;
+}
+.title {
+  font-size: clamp(25px, 5vw, 45px);
+  font-weight: 800;
+}
+.sub {
+  font-size: clamp(18px, 3.2vw, 28px);
+}
+.smallText {
+  font-size: clamp(14px, 2vw, 20px);
+}
+
+/* ===============================
+   5. 세 이미지 성과
+================================*/
+.세이미지 {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 20px auto;
+}
+
+.세이미지 img {
+  width: clamp(60px, 22vw, 130px);
+  height: auto;
+}
+
+/* ===============================
+   6. 까만 박스 섹션
+================================*/
 .까만박스 {
-    background-image: url("../랜딩페이지아이콘/1page/배경.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 100%;
-  height: 250px;
-  overflow: hidden;
-  position:relative;
+  padding: 20px 0;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.점2{
-  color:#ffffff;
-   position:absolute;
-   left: 235px;
-   top: 30px;
-   letter-spacing: 21px;
+.오직 {
+  font-size: clamp(22px, 5vw, 28px);
+  color: white;
+  margin-bottom: 12px;
+}
+.무료상담 {
+  width: clamp(180px, 40vw, 320px);
+  height: auto;
+}
+.손 {
+  width: clamp(100px, 28vw, 180px);
+}
+.버튼 {
+  width: clamp(120px, 30vw, 200px);
+}
 
-}
-.오직{
-  color: #ffffff;
-  font-size: 50px;
-   position:absolute;
-   left: 120px;
-   top: 40px;
-}
-.무료상담{
-  width: 500px;
-  height: auto;
- position: absolute;
- top: 100px;
-left: 100px;
-}
-.손{
-  width: 300px;
-  height: auto;
-   position: absolute;
-   left: 800px;
-   top: -100px;;
-}
-.버튼{
-  width: 220px;
-  height: auto;
-  position: absolute;
-  left: 650px;
-  top: 40px;
-}
-/*---------------------------1페이지끝------------------------------------------*/
+/* ===============================
+   7. 2페이지 — 조정전 / 조정후
+================================*/
 .큰흰색박스{
-  background-color: #ffffff;
   width: 100%;
+  background-color: #ffffff;
+  padding: 25px 6px;
+  text-align: center;
 }
-.어떻게1{
-  font-size: 40px;
-  font-weight: 700;
-  margin-top: 50px;
+.어떻게1, .어떻게2, .감소1, .감소2 {
+  font-size: clamp(20px, 4.7vw, 32px);
 }
-.어떻게2{
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 30px;
+.조정전후 {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
 }
-.제로리셋{
-  color: #66c99c;
-  font-weight: 900;
-  font-size: 45px;
+.조정전후 img {
+  width: clamp(160px, 42vw, 300px);
 }
-.감소1{
-   font-size: 40px;
-  font-weight: 700;
-}
-.감소2{
-   font-size: 40px;
-  font-weight: 700;
-  margin-top: -15px;
-}
-.경고{
-    color: #6c6c6c;
-    margin-top: -5px;
-margin-bottom: 50px;
-}
-.배너{
-  margin-top: 50px;
-  margin-bottom: -10px;
-}
-.원금박스{
-margin-top: 50px;
-}
-.회생1{
-  color:#ffffff;
-  font-size: 45px; 
-  font-weight: 700;
-}
-.회생2{
-  color:#ffffff;
-  font-size: 45px; 
-  font-weight: 850;
-}
-/*2페이지끝*/
-.밑화살표{
- margin-top: 50px;
-}
-/* 카드 그룹 컨테이너 */
+
+/* ===============================
+   8. 카드 영역
+================================*/
 .네모그룹 {
   display: grid;
-  gap: 20px;
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-
-  /* PC — 4열 */
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 16px;
+  width: 90%;
+  margin: 40px auto;
 }
-
-/* 각 카드 */
 .네모그룹 > div {
   background: #ffffff;
   border-radius: 14px;
-  padding: 18px 22px;
-
-  /* 핵심! 가로 길게 / 높이 낮게 */
-  min-height: 140px; 
-  display: flex;
-  flex-direction: column;
-
-  border: 1px solid #eeeeee;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-
-  transition: all 0.25s ease;
-}
-
-/* 카드 hover 효과 */
-.네모그룹 > div:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-}
-
-@media (max-width: 1024px) {
-  .네모그룹 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 640px) {
-  .네모그룹 {
-    grid-template-columns: 1fr;
-  }
+  padding: 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
 }
 .카드제목 {
-  color:#66c99c;
-  font-size: 30px;
+  font-size: clamp(20px, 4vw, 28px);
   font-weight: 800;
-  line-height: 1.2;
+  color:#66c99c;
 }
 .카드내용 {
-  color: black;
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 10px;
-}
- .네모그룹 > div {
-    min-height: 120px;
-    padding: 22px;
-  }                                                                                                  
-.구구{
-  font-size: 40px;
-  font-weight: 700;                                                                                
-  color:#ffffff;
- position: relative;
- top: 55px;           
-}
-.구구스팬{
-    font-size: 50px;                                                                                                                                                                                                                                                                                                                                                                                                                   
-}
-.상담창{
-  background-color: rgb(238, 238, 238);
-  padding-top: 70px;   
-}                                                                                                                                                                                                      
-.상담제목{
-  color: #66c99c;
-  font-size: 50px;                                                     
-  font-weight: 600;
-                 
-}       
- .상담서론1{
-  color: black;
-  font-size: 25px;             
-     line-height: 1.3;
-     margin-top: 20px;
-}
- .상담서론2{
-  color: black;
-  font-size: 25px;             
-     line-height: 1.3;
-     margin-bottom: 50px;
-}
-/*********************************
- 메인 섹션
-*********************************/
-.상담창 {
-  width: 100%;
-  padding: 80px 0;
-  background: #f5f5f5; /* 사진처럼 밝은 회색 배경 */
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  font-size: clamp(14px, 2vw, 20px);
+  color:#222;
 }
 
-/*********************************
- 카드 박스
-*********************************/
+/* ===============================
+   9. 상담창
+================================*/
+.상담창 {
+  background: #f2f2f2;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+}
+.상담제목 {
+  font-size: clamp(24px, 5vw, 40px);
+  color: #66c99c;
+  margin-bottom: 12px;
+}
 .상담폼박스 {
   width: 90%;
-  max-width: 800px;
-  background: #fff;
-  border-radius: 26px;
-  padding: 15px 52px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-  text-align: center;
+  max-width: 680px;
+  background: white;
   margin: 0 auto;
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
 }
 
-
-/*********************************
- 입력 폼 전체
-*********************************/
-.상담폼 {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-/*********************************
- 위 4개 인풋 (2 x 2)
-*********************************/
 .입력그리드 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
-
-.상담폼 label {
-  display: flex;
- flex-direction: column;
-  text-align: left;
-  font-size: 15px;
-  color: #444;
-  gap: 6px;
-}
-
-/*********************************
- input
-*********************************/
-.상담폼 input {
+.상담폼 input, .상담폼 textarea {
   padding: 14px;
   border-radius: 10px;
+  border: 2px solid #ddd;
   font-size: 15px;
-  border: 2px solid #e4e4e4;
-  background: #fafafa;
-  transition: .22s ease;
-  text-align: left;
-}
-
-.상담폼 input:focus,
-.상담폼 textarea:focus {
-  outline: none;
-  border-color: #c93939; /* 레드 포인트 */
-}
-
-/*********************************
- textarea
-*********************************/
-.textarea영역 textarea {
-  height: 160px;
-  resize: none;
-  padding: 14px;
-  border-radius: 10px;
-  border: 2px solid #e4e4e4;
-  background: #fafafa;
-  font-size: 15px;
-  text-align: left;
-}
-
-/*********************************
- 개인정보 동의
-*********************************/
-.체크라인 {
-  display: flex;
-  align-items: center !important;
-  gap: 10px;
-  color: #555;
-  font-size: 15px;
-  margin-top: 6px;
- flex-direction: row !important; 
-  justify-content: center;
-}
-.체크라인 input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-/*********************************
- 개인정보 안내
-*********************************/
-.보안문구 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #777;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/*********************************
- 제출 버튼 (빨간 버튼)
-*********************************/
-.상담버튼 {
-  margin-top: 6px;
   width: 100%;
-  padding: 15px 0;
-  background: #d8342e;
-  border-radius: 12px;
-  border: none;
-
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-
-  transition: .25s;
 }
 
-.상담버튼:hover {
-  background: #ba2b25;
-}
-
-/*********************************
- 모바일 최적화
-*********************************/
-@media (max-width: 680px) {
-  .입력그리드 {
-    grid-template-columns: 1fr;
-  }
-
-  .상담폼박스 {
-    padding: 32px 26px;
-  }
-
-  .상담버튼 {
-    font-size: 18px;
-    padding: 14px;
-  }
-}
-.자물쇠{
-  width: 20px;
-   position: relative;
-  top: -1px;
-  margin-right: 5px;
-}
-/*---------------애니메이션 시작-----------------------------------*/
+/* ===============================
+   10. 애니메이션
+================================*/
 .hidden {
   opacity: 0;
   transition: .6s ease;
 }
 .show {
   opacity: 1;
+  transform: translateY(0);
 }
 .fade-up.hidden {
-  transform: translateY(40px);
+  transform: translateY(35px);
 }
 
-.fade-up.show {
-  transform: translateY(0);
-}
-.fade-left.hidden {
-  transform: translateX(-200px);
-}
-
-.fade-left.show {
-  transform: translateX(0);
-}
-.fade-right.hidden {
-  transform: translateX(200px);
-}
-
-.fade-right.show {
-  transform: translateX(0);
-}
-.scale.hidden {
-  transform: scale(.01);
-}
-
-.scale.show {
-  transform: scale(1);
-}
-.glow {
-  animation: glowPulse 2.5s infinite ease-in-out;
-}
-
-@keyframes glowPulse {
-  0%   { text-shadow: 0 0 0px rgba(255, 255, 255, .0); }
-  50%  { text-shadow: 0 0 22px rgba(255, 255, 255, .5); }
- 100%  { text-shadow: 0 0 0px rgba(255, 255, 255, .0); }
-}
-.pulse {
-  animation: pulse 1.8s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0%   { transform: scale(1);   opacity: 1; }
-  50%  { transform: scale(1.08); opacity: 0.75; }
-  100% { transform: scale(1); opacity: 1; }
-}
-.말1 {
-  transition-delay: 0.1s;
-}
-
-.말2 {
-  transition-delay: 0.4s;
-}
-.초록네모{
-  transition-delay: 0.6s;
-}
-.glow-box {
-  animation: boxGlowPulse 2.5s ease-in-out infinite;
-}
-
-@keyframes boxGlowPulse {
-  0% {
-    box-shadow: 0 0 0px rgba(0, 255, 200, 0);
+/* ===============================
+   11. 모바일 규칙
+================================*/
+@media (min-width: 800px) {
+  .입력그리드 {
+    grid-template-columns: 1fr 1fr;
   }
-  50% {
-    box-shadow: 0 0 30px rgba(0, 255, 200, 0.7);
+  .무료상담 {
+    width: clamp(180px, 22vw, 300px);
   }
- 100% {
-    box-shadow: 0 0 0px rgba(0, 255, 200, 0);
+  .일부레이아웃 {
+    width: clamp(130px, 30vw, 260px);
   }
-}
-.초록네모{
-  cursor:pointer;
-}
-@keyframes fadePulse {
-  0%   { opacity: 0.4; }
-  50%  { opacity: 1; }
- 100%  { opacity: 0.4; }
-}
-
-.fade-opacity {
-  animation: fadePulse 2s ease-in-out infinite;
-}
-@keyframes fade {
-  0%   { opacity: 0.7; }
-  50%  { opacity: 1; }
- 100%  { opacity: 0.7; }
-}
-
-.fade {
-  animation: fade 2s ease-in-out infinite;
-}
-.카드1.show{
-  transition-delay: 0.1s;
-}
-.카드2.show{
-  transition-delay: 0.4s;
-}
-.카드3.show{
-  transition-delay: 0.7s;
-}
-.카드4.show{
-  transition-delay: 1.0s;
-}
-.네모그룹 > div {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-/* show 되면 애니메이션 시작 */
-.네모그룹 > div.show {
-  opacity: 1;
-  transform: translateY(0);
 }
