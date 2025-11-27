@@ -788,3 +788,120 @@ margin-top: 50px;
     margin-top: 40px;
   }
 }
+/* 📱 모바일 전용 최적화 (이미지 자동 축소 포함) */
+@media (max-width: 680px) {
+
+  img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .배경화면 {
+    padding: 20px 0;
+  }
+
+  .초록네모 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 92%;
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  .왼쪽 img {
+    width: 45vw !important;
+    max-width: 200px;
+    min-width: 120px;
+  }
+
+  .오른쪽전체 {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .말풍선묶음 {
+    width: auto;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:10px;
+  }
+
+  .말1,
+  .말2 {
+    position: relative;
+    width: 70vw;
+    max-width:260px;
+    left: 0;
+    top: 0;
+    margin: 6px auto;
+  }
+
+  .까만박스 {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .점2,
+  .오직,
+  .무료상담,
+  .손,
+  .버튼 {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 10px auto !important;
+    text-align: center;
+  }
+
+  .무료상담 {
+    width: 70vw;
+    max-width: 340px;
+  }
+
+  .손 {
+    width: 45vw;
+    max-width: 200px;
+  }
+
+  .버튼 {
+    width: 40vw;
+    max-width: 180px;
+  }
+
+  .조정전후 img {
+    width: 70vw;
+    max-width: 320px;
+  }
+
+  .세이미지 img {
+    width: 22vw;
+    max-width: 110px;
+    height: auto;
+  }
+
+  .네모그룹 {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .상담제목 {
+    font-size: 7vw;
+  }
+
+  .상담폼박스 {
+    padding: 20px;
+  }
+
+  .구구 {
+    font-size: 5vw;
+    top: 0;
+  }
+
+  .구구스팬 {
+    font-size: 6vw;
+  }
+}
