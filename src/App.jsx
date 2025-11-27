@@ -2,27 +2,27 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "./config/firebase";
-import 리셋 from "./pageicon/1page/리셋버튼아이콘.png"
-import 로고 from "./pageicon/1page/나란로고.png"
-import 말풍선1 from"./pageicon/1page/기각률1미만.png"
-import 말풍선2 from"./pageicon/1page/12개월분납가능.png"
-import 화살표 from "./pageicon/1page/화살표버튼.png"
+import 리셋 from "./pageicon/1page/resetrogo.png"
+import 로고 from "./pageicon/1page/rogo.png"
+import 말풍선1 from"./pageicon/1page/1under.png"
+import 말풍선2 from"./pageicon/1page/12.png"
+import 화살표 from "./pageicon/1page/butten.png"
 import 변제율 from"./pageicon/1page/1.png"
 import 즉시 from"./pageicon/1page/2.png"
 import 사후보정 from"./pageicon/1page/3.png"
-import 무료상담  from"./pageicon1page/무료상담.png"
-import 버튼  from"./pageicon/1page/버튼.png"
-import 손  from"./pageicon/1page/손.png"
+import 무료상담  from"./pageicon1page/free.png.png"
+import 버튼  from"./pageicon/1page/botten.png"
+import 손  from"./pageicon/1page/hand.png"
 /*----------------------------1페이지 끝!!!!!!!!!!---------------------------*/
-import 조정전 from"./pageicon/2page/조정전.png"
-import 조정후 from"./pageicon/2page/조정후.png"
-import 투명  from"./pageicon/2page/투명한비용공개.png"
-import 배너 from"./pageicon/2page/분납가능배너.png"
-import 원금 from"./pageicon/2page/매달상환하는원금.png"
+import 조정전 from"./pageicon/2page/a.png"
+import 조정후 from"./pageicon/2page/b.png"
+import 투명  from"./pageicon/2page/too.png"
+import 배너 from"./pageicon/2page/ok.png"
+import 원금 from"./pageicon/2page/mae.png"
 /*-------------------------2페이지 끝----------------------------------------*/
-import 밑화살표 from"./pageicon/3page/아래화살표.png"
-import 그림자 from"./pageicon/3page/그림자.png"
-import 자물쇠 from"./pageicon/3page/자물쇠.jpeg"
+import 밑화살표 from"./pageicon/3page/white.png"
+import 그림자 from"./pageicon/3page/bk.png"
+import 자물쇠 from"./pageicon/3page/lock.jpeg"
 
 function App() {
   const [form, setForm] = useState({
