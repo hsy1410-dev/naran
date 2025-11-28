@@ -707,23 +707,42 @@ margin-top: 50px;
   }
 
   /* ===== 🔥 상단 말풍선 ===== */
+ /* ✅ PC + 기본 레이아웃 (가로로 말풍선 2개 나란히) */
+.말풍선묶음 {
+  position: relative;
+  display: flex;
+  flex-direction: row;        /* 세로 금지, 가로 고정 */
+  justify-content: center;
+  align-items: center;
+  gap: 16px;                  /* 말풍선 사이 간격 */
+  margin-bottom: 20px;
+}
+
+/* 말풍선 이미지 (PC 기준 크기) */
+.말1,
+.말2 {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 260px;               /* PC용 고정 크기 */
+  max-width: 260px;
+  height: auto;
+}
+
+/* ✅ 모바일에서만 크기 줄이기 */
+@media (max-width: 768px) {
   .말풍선묶음 {
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    width: 100%;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 20px;
-    position: relative;
+    gap: 8px;                 /* 간격도 살짝 줄이기 */
   }
 
-  .말1, .말2 {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 70vw;
+  .말1,
+  .말2 {
+    width: 150px;             /* 말풍선 전체 크기 확 줄이기 */
+    max-width: 150px;
+    height: auto;
   }
+}
+
 
   /* ===== 🔥 메인 박스 리셋 ZERO ===== */
   .초록네모 {
@@ -926,12 +945,8 @@ margin-top: 50px;
     justify-content: center;
     align-items: center;
     width: auto !important;
-   transform: scale(0.45) !important;   /* 화면에서 보이는 크기 축소 */
-    transform-origin: top center !important;
+
   }
 
-  .말1, .말2 {
-    width: auto !important;
-    max-width: none !important;
-  }
+
 }
