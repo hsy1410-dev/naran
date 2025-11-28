@@ -927,42 +927,4 @@ margin-top: 50px;
   }
 }
 /* ✅ 말풍선 강제 리셋 + PC/모바일 공통 가로 나란히 정렬 */
-@media (max-width: 2000px) {
-  .말풍선묶음 {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 360px !important;
-    margin: 40px auto !important;
-
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 12px !important;
-    overflow: visible !important;
-  }
-
-  .말1,
-  .말2 {
-    display: block !important;
-    position: relative !important;
-    width: 140px !important;
-    max-width: 140px !important;
-    height: auto !important;
-    margin: 0 !important;
-    z-index: 1 !important;
-
-    /* 애니메이션/숨김 때문에 안 보이는 것 강제 해제 */
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-  }
-
-  /* 말풍선 안에서는 hidden 무효화 (일단 보이게 만드는 용도) */
-  .말풍선묶음 .hidden {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    display: block !important;
-  }
-}
+  
