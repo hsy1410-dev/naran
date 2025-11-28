@@ -951,17 +951,4 @@ margin-top: 50px;
     width: clamp(24px, 5vw, 40px);   /* 화살표도 축소 */
   }
 }
-/* 모바일에서도 PC 동일하게 — 절대 세로정렬 금지 */
-@media (max-width: 768px) {
-  .말풍선묶음 {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center;
-    align-items: center;
-    width: auto !important;
 
-  }
-
-
-}
