@@ -710,58 +710,51 @@ margin-top: 50px;
 /* ✅ 공통: PC 기준 가로 2개, 중앙 정렬 */
 /* PC + 공통 */
 .말풍선묶음 {
-  position: relative;
-  display: flex;
-  flex-direction: row;       
-  justify-content: center;   
-  align-items: center;
-  gap: 16px;                 
-  margin: 0 auto 20px;
-  width: 100%;
+  position: relative; 
+  width: 300px;
+  margin: 0 auto; 
+  left: -100px; 
+  margin-bottom: 70px;
 }
 
-/* 이미지 기본 스타일 */
-.말1,
-.말2 {
-  display: block;
-  width: 260px;
+/* 왼쪽 말풍선 */
+.말1 {
+  width: 300px;
   height: auto;
-  opacity: 1;
-  visibility: visible;
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0 auto;
 }
 
-/* 모바일 */
-@media (max-width: 768px) {
+/* 오른쪽 말풍선 */
+.말2 {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 50px;
+  left: 250px;
+  z-index: 2;
+}
+/* 📱 말풍선 모바일 사이즈 / 정렬만 조정 */
+@media (max-width: 680px) {
   .말풍선묶음 {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 auto 16px;
+    position: relative;
     width: 100%;
-    min-height: 120px;
-    overflow: visible !important;
+    margin: 0 auto 40px;
+    left: 0; /* 모바일에서 가운데로 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .말1,
   .말2 {
-    display: block !important;
-    width: 140px !important;   /* 모바일에서 더 보기 좋음 */
-    height: auto !important;
-    opacity: 1 !important;     /* hidden 무시 */
-    visibility: visible !important;
-    transform: none !important;
-    filter: none !important;
-  }
-
-  /* 숨김 클래스 무효화 */
-  .말풍선묶음 .hidden {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    display: block !important;
+    width: 160px;   /* 300 → 160 등으로 축소 */
+    height: auto;
   }
 }
+
 
 
   /* ===== 🔥 메인 박스 리셋 ZERO ===== */
