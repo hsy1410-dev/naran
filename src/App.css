@@ -721,7 +721,9 @@ margin-top: 50px;
     align-items: center;
     gap: 12px;
   }
-
+.흰색박스 {
+  width:100%;
+}
   .말1,
   .말2 {
     position: relative;       /* absolute 해제 → 둘 다 보이게 */
