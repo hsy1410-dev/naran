@@ -900,7 +900,7 @@ margin-top: 50px;
   .점 {
     font-size: clamp(8px, 1.4vw, 14px);
     top: 3px;
-    left: -3vw;
+    left: -1vw;
   }
 
   .sub {
