@@ -707,48 +707,45 @@ margin-top: 50px;
   }
 
   /* ===== 🔥 상단 말풍선 ===== */
-/* ✅ PC + 모바일 공통 기본값: 무조건 보이게 */
+/* ✅ 공통: PC 기준 가로 2개, 중앙 정렬 */
 .말풍선묶음 {
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: row;       /* 가로 고정 */
+  justify-content: center;   /* 가운데 정렬 */
   align-items: center;
-  gap: 12px;
+  gap: 16px;                 /* 말풍선 사이 간격 */
   margin: 0 auto 20px;
   width: 100%;
-  /* 디버깅용 배경색 (보이는지 확인용) */
-  background-color: rgba(255, 0, 0, 0.1);
 }
 
+/* ✅ 말풍선 개별 (PC 기준 크기) */
 .말1,
 .말2 {
   display: block;
-  width: 240px;
-  max-width: 240px;
+  width: 260px;              /* PC */
+  max-width: 260px;
   height: auto;
-  /* 디버깅용 테두리 */
-  border: 1px solid rgba(0, 0, 255, 0.3);
 }
 
-/* ✅ 모바일에서만 크기만 줄이기 (숨기지 않음) */
+/* ✅ 모바일: 구조는 그대로, 크기만 줄이고 '최소 높이'를 강제 */
 @media (max-width: 768px) {
   .말풍선묶음 {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 auto 16px !important;
-    width: 100% !important;
-    background-color: rgba(0, 255, 0, 0.1);   /* 모바일일 때는 연두색 배경으로 바뀌게 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 16px;
+    width: 100%;
+    min-height: 120px;       /* 🔹 박스가 너무 작아지지 않게 최소 높이 강제 */
   }
 
   .말1,
   .말2 {
-    display: block !important;
-    width: 130px !important;    /* 여기 숫자만 줄이면 더 작게 가능 */
-    max-width: 130px !important;
-    height: auto !important;
-    border: 1px solid rgba(0, 0, 255, 0.5);
-    opacity: 1 !important;
-    visibility: visible !important;
+    display: block;
+    width: 130px;            /* 🔹 모바일용 축소 크기 */
+    max-width: 130px;
+    height: auto;
   }
 }
 
