@@ -855,68 +855,13 @@ margin-top: 50px;
   }
 
 }
+
 @media (max-width: 768px) {
   .초록네모 {
-    flex-direction: column;   /* 세로로 쌓이게 */
-    align-items: center;
-    justify-content: center;
-    width: 90%;               /* 모바일에서 카드 좀 더 넓게 */
-    padding: 24px 16px;       /* 좌우 패딩 줄이기 */
-  }
-
-  .왼쪽 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-
-  .왼쪽 img {
-    width: 45vw;          /* 모바일에서는 더 작게 */
-    max-width: 220px;
-    min-width: 140px;
-  }
-
-  .오른쪽전체 {
-    margin-left: 0;       /* 가로 여백 제거 (가운데 정렬) */
-    align-items: center;
-    text-align: center;
-    gap: 6px;
-  }
-
-  .title {
-    font-size: 22px;      /* 모바일에서 너무 크지 않게 고정 */
-  }
-
-  .sub {
-    font-size: 18px;
-    margin-top: 0;
-  }
-
-  .smallText {
-    font-size: 14px;
-    margin-top: 0;
-  }
-
-  /* 점 위치 모바일에서 깨지면 정렬 초기화 */
-  .점 {
-    position: static;
-    font-size: 10px;
-    margin-left: 4px;
-  }
-
-  .화살표영역 {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .화살표영역 .arrow {
-    width: 48px;   /* 모바일에서 살짝 줄인 화살표 */
-  }
-}@media (max-width: 768px) {
-  .초록네모 {
-    transform: scale(0.85);        /* 비율만 살짝 축소 */
-    transform-origin: top center;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
 }
