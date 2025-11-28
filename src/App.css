@@ -708,45 +708,43 @@ margin-top: 50px;
 
   /* ===== 🔥 상단 말풍선 ===== */
  /* ✅ PC + 기본 레이아웃 (가로로 말풍선 2개 나란히) */
+/* ✅ 공통 (PC 기준 가로 정렬) */
 .말풍선묶음 {
   position: relative;
   display: flex;
-  flex-direction: row;        /* 세로 금지, 가로 고정 */
-  justify-content: center;
+  flex-direction: row;        /* 가로 고정 */
+  justify-content: center;    /* 가운데 정렬 */
   align-items: center;
   gap: 16px;                  /* 말풍선 사이 간격 */
-  margin-bottom: 20px;
+  margin: 0 auto 20px;        /* 위아래 여백 + 가로 중앙 */
+  width: fit-content;         /* 내용 크기만큼만 차지해서 중앙 정렬 더 안정적 */
 }
 
 /* 말풍선 이미지 (PC 기준 크기) */
 .말1,
 .말2 {
-  position: relative;
-  left: 0;
-  top: 0;
+  display: block;             /* 이미지 주변 공백 제거 */
   width: 260px;               /* PC용 고정 크기 */
   max-width: 260px;
   height: auto;
 }
 
-/* ✅ 모바일에서만 크기 줄이기 */
+/* ✅ 모바일에서만 크기만 줄이기 (구조 그대로 유지) */
 @media (max-width: 768px) {
   .말풍선묶음 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center !important;   /* ← 가운데 정렬 핵심 */
-    align-items: center !important;
-    width: 100%;
-    margin: 0 auto;                       /* ← 박스 자체를 가운데 */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 16px;
+    width: 100%;              /* 줄어든 말풍선을 가운데 두려고 100% */
   }
 
-  .말1, .말2 {
-    width: 150px;
+  .말1,
+  .말2 {
+    width: 140px;             /* 둘 다 작게 */
+    max-width: 140px;
     height: auto;
-    display: block;
   }
 }
-
 
 
   /* ===== 🔥 메인 박스 리셋 ZERO ===== */
