@@ -867,7 +867,7 @@ margin-left: -5px !important;
 @media (max-width: 768px) {
   .canvas-wrap {
     transform: scale(0.4);
-    transform-origin: top left;
+    transform-origin: top center;
     height: calc(250px * 0.4);
     
 }
