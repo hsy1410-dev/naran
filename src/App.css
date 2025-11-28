@@ -710,9 +710,6 @@ margin-top: 50px;
     height: auto;
   }
 
-
-/* 📱 모바일: 말풍선 나란히 + 축소 */
-@media (max-width: 680px) {
   .말풍선묶음 {
     position: relative;
     left: 0;                  /* -100px 보정 제거 */
@@ -732,7 +729,7 @@ margin-top: 50px;
     max-width: 150px;
     height: auto;
   }
-}
+
 
 
 
