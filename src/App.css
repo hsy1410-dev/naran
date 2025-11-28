@@ -853,4 +853,7 @@ margin-top: 50px;
     transform-origin: top left;
     height: calc(250px * 0.3);
   }
+  .말풍선묶음 {
+    transform: scale(0.3);
+  }
 }
