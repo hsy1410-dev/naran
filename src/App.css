@@ -732,16 +732,21 @@ margin-top: 50px;
 /* ✅ 모바일에서만 크기 줄이기 */
 @media (max-width: 768px) {
   .말풍선묶음 {
-    gap: 8px;                 /* 간격도 살짝 줄이기 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;   /* ← 가운데 정렬 핵심 */
+    align-items: center !important;
+    width: 100%;
+    margin: 0 auto;                       /* ← 박스 자체를 가운데 */
   }
 
-  .말1,
-  .말2 {
-    width: 150px;             /* 말풍선 전체 크기 확 줄이기 */
-    max-width: 150px;
+  .말1, .말2 {
+    width: 150px;
     height: auto;
+    display: block;
   }
 }
+
 
 
   /* ===== 🔥 메인 박스 리셋 ZERO ===== */
