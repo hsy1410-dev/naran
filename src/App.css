@@ -926,7 +926,8 @@ margin-top: 50px;
     justify-content: center;
     align-items: center;
     width: auto !important;
-   transform: scale(0.55);
+   transform: scale(0.45) !important;   /* 화면에서 보이는 크기 축소 */
+    transform-origin: top center !important;
   }
 
   .말1, .말2 {
