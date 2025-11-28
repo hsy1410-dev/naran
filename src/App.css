@@ -689,23 +689,6 @@ margin-top: 50px;
   opacity: 1;
   transform: translateY(0);
 }
-/* 📱 모바일 완성본 적용 (너가 올린 디자인 그대로) */
-@media (max-width: 680px) {
-
-  /* 전체 레이아웃 정렬 */
-  body, html, #root {
-    overflow-x: hidden;
-  }
-
-  .배경화면{
-    padding: 30px 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
   /* ===== 🔥 상단 말풍선 ===== */
 /* ✅ 공통: PC 기준 가로 2개, 중앙 정렬 */
 .말풍선묶음 {
@@ -735,8 +718,26 @@ margin-top: 50px;
   left: 250px;
   z-index: 2;
 }
-/* 📱 모바일에서 말풍선 2개 나란히 + 둘 다 보이게 */
+/* 📱 모바일 완성본 적용 (너가 올린 디자인 그대로) */
 @media (max-width: 680px) {
+
+  /* 전체 레이아웃 정렬 */
+  body, html, #root {
+    overflow-x: hidden;
+  }
+
+  .배경화면{
+    padding: 30px 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+/* 📱 모바일에서 말풍선 2개 나란히 + 둘 다 보이게 */
+
   .말풍선묶음 {
     position: relative;
     left: 0;                        /* PC에서 주던 -100px 보정 제거 */
@@ -756,7 +757,7 @@ margin-top: 50px;
     max-width: 150px;
     height: auto;
   }
-}
+
 
 
   /* ===== 🔥 메인 박스 리셋 ZERO ===== */
