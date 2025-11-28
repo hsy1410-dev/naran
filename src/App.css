@@ -88,6 +88,7 @@ flex-direction: column;
   position: relative;
   top: 5px;
   left: -4vw;
+  text-align: left;
 }
 
 /* 부제 */
@@ -103,6 +104,7 @@ flex-direction: column;
   font-size: clamp(16px, 2vw, 26px);
   color: #e9e9e9;
   margin-top: -5px;
+  text-align: left;
 }
 
 /* 오른쪽 화살표 */
