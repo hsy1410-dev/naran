@@ -805,8 +805,9 @@ margin-top: 50px;
 
   /* ===== 🔥 작은 아이콘 3개 줄 ===== */
   .세이미지 img{
-    width:22vw;
-    max-width:90px;
+    width:28vw;
+max-width:180px;
+
   }
 
   /* ===== 🔥 혜택 카드 박스 ===== */
