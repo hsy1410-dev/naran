@@ -707,45 +707,48 @@ margin-top: 50px;
   }
 
   /* ===== 🔥 상단 말풍선 ===== */
-/* ✅ 공통: 말풍선 2개를 가로로 가운데 배치 */
+/* ✅ PC + 모바일 공통 기본값: 무조건 보이게 */
 .말풍선묶음 {
   display: flex;
-  flex-direction: row;       /* 가로 배치 고정 */
-  justify-content: center;   /* 가운데 정렬 */
+  justify-content: center;
   align-items: center;
-  gap: 12px;                 /* 말풍선 사이 간격 */
-  margin: 0 auto 20px;       /* 중앙 정렬 + 아래 여백 */
-  width: 100%;               /* 부모 너비 안에서만 */
+  gap: 12px;
+  margin: 0 auto 20px;
+  width: 100%;
+  /* 디버깅용 배경색 (보이는지 확인용) */
+  background-color: rgba(255, 0, 0, 0.1);
 }
 
-/* ✅ 말풍선 하나하나 (img든 div든 공통 스타일) */
 .말1,
 .말2 {
   display: block;
-  width: 240px;              /* PC에서 보이는 기본 크기 */
+  width: 240px;
   max-width: 240px;
   height: auto;
+  /* 디버깅용 테두리 */
+  border: 1px solid rgba(0, 0, 255, 0.3);
 }
 
-/* 🔹 만약 .말1 / .말2 가 <div> + background-image 라면 height 필요 */
-.말1,
-.말2 {
-  /* 위 width 설정 유지하면서, 이 줄만 추가해줘 */
-  /* height: 140px;  <-- div + background-image 구조라면 이거 꼭 넣어야 보임 */
-}
-
-/* ✅ 모바일에서만 크기 줄이기 (구조는 그대로) */
+/* ✅ 모바일에서만 크기만 줄이기 (숨기지 않음) */
 @media (max-width: 768px) {
   .말풍선묶음 {
-    justify-content: center;
-    margin-bottom: 16px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto 16px !important;
+    width: 100% !important;
+    background-color: rgba(0, 255, 0, 0.1);   /* 모바일일 때는 연두색 배경으로 바뀌게 */
   }
 
   .말1,
   .말2 {
-    width: 130px;            /* 모바일에서 작게 */
-    max-width: 130px;
-    height: auto;            /* div+배경이면 위에 height 그대로 유지 */
+    display: block !important;
+    width: 130px !important;    /* 여기 숫자만 줄이면 더 작게 가능 */
+    max-width: 130px !important;
+    height: auto !important;
+    border: 1px solid rgba(0, 0, 255, 0.5);
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
