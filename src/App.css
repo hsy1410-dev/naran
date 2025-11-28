@@ -76,6 +76,7 @@ flex-direction: column;
 .title {
   font-size: clamp(28px, 4vw, 52px); /* ⭐ 화면 크기에 따라 자동 조절 */
   font-weight: 900;
+  text-align: left;
 }
 
 .제로 {
@@ -94,6 +95,7 @@ flex-direction: column;
   font-size: clamp(22px, 3.2vw, 46px); 
   font-weight: 700;
   margin-top: -5px; /* 강한 -20px 제거 */
+  text-align: left;
 }
 
 /* 아래 문장 */
@@ -863,5 +865,53 @@ margin-top: 50px;
     flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: space-between !important;
+  }
+}
+/* ✅ 모바일에서만 전체 크기 축소 + 가로 구조 유지 */
+@media (max-width: 768px) {
+  .초록네모 {
+    width: 90%;                      /* 70% → 화면 거의 꽉 차게 */
+    max-width: 360px;                /* 카드 자체를 더 작게 */
+    padding: 12px 16px;              /* 안쪽 여백 축소 */
+    
+    display: flex !important;
+    flex-direction: row !important;  /* 세로 정렬 방지 */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .왼쪽 img {
+    width: 26vw;         /* 20vw → 살짝 키우지만 max 축소 */
+    max-width: 140px;    /* 240px → 줄이기 */
+    min-width: 100px;    /* 160px → 줄이기 */
+  }
+
+  .오른쪽전체 {
+    margin-left: 2vw;    /* 3vw → 줄이기 */
+    gap: 6px;            /* 10px → 줄이기 */
+  }
+
+  .title {
+    font-size: clamp(18px, 3vw, 26px);  /* 전체적으로 축소 */
+  }
+
+  .점 {
+    font-size: clamp(8px, 1.4vw, 14px);
+    top: 3px;
+    left: -3vw;
+  }
+
+  .sub {
+    font-size: clamp(14px, 2.4vw, 20px);
+    margin-top: -2px;
+  }
+
+  .smallText {
+    font-size: clamp(12px, 1.8vw, 16px);
+    margin-top: -2px;
+  }
+
+  .화살표영역 .arrow {
+    width: clamp(24px, 5vw, 40px);   /* 화살표도 축소 */
   }
 }
