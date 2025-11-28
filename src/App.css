@@ -690,12 +690,12 @@ margin-top: 50px;
   transform: translateY(0);
 }
   /* ===== 🔥 상단 말풍선 ===== */
-/* ✅ 공통: PC 기준 가로 2개, 중앙 정렬 */
+/* ===== 상단 말풍선 (PC 기준) ===== */
 .말풍선묶음 {
   position: relative; 
   width: 300px;
   margin: 0 auto; 
-  left: -100px; 
+  left: -100px;
   margin-bottom: 70px;
 }
 
@@ -718,6 +718,7 @@ margin-top: 50px;
   left: 250px;
   z-index: 2;
 }
+
 /* 📱 모바일 완성본 적용 (너가 올린 디자인 그대로) */
 @media (max-width: 680px) {
 
@@ -736,13 +737,13 @@ margin-top: 50px;
   }
 
 
-/* 📱 모바일에서 말풍선 2개 나란히 + 둘 다 보이게 */
-
+/* 📱 모바일: 말풍선 나란히 + 축소 */
+@media (max-width: 680px) {
   .말풍선묶음 {
     position: relative;
-    left: 0;                        /* PC에서 주던 -100px 보정 제거 */
-    width: 100%;                    /* 화면 기준으로 */
-    margin: 0 auto 40px;
+    left: 0;                  /* -100px 보정 제거 */
+    width: 100%;
+    margin: 20px auto 40px;
 
     display: flex;
     justify-content: center;
@@ -752,11 +753,13 @@ margin-top: 50px;
 
   .말1,
   .말2 {
-    position: relative;             /* ❗ absolute 해제 */
-    width: 150px;                   /* 300px → 축소 */
+    position: relative;       /* absolute 해제 → 둘 다 보이게 */
+    width: 150px;
     max-width: 150px;
     height: auto;
   }
+}
+
 
 
 
