@@ -853,7 +853,23 @@ margin-top: 50px;
     transform-origin: top left;
     height: calc(250px * 0.3);
   }
+
+}
+/* 공통 (PC 레이아웃 그대로) */
+.말풍선묶음 {
+  position: relative;
+  width: 800px;      /* PC에서 쓰던 값 */
+  margin: 0 auto;
+  /* flex로 세로 정렬하고 싶지 않으면 flex 빼기 */
+}
+
+.말1, .말2 {
+  position: absolute;   /* PC에서 쓰던 위치 방식 그대로 */
+  /* top / left 값도 PC에서 쓰던 거 그대로 */
+}
+@media (max-width: 768px) {
   .말풍선묶음 {
-    transform: scale(0.3);
+    transform: scale(0.7);         /* 원하는 비율 */
+    transform-origin: top center;  /* 위쪽 가운데 기준으로 줄이기 */
   }
 }
