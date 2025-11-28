@@ -144,11 +144,12 @@ function App() {
     <p className="점2">● ●●</p>
     <p className="오직">오직 이 링크에서만</p>
     <img src={무료상담} className="무료상담" />
+    <div className="손버튼">
     <img src={손} className="손" />
     <img src={버튼} className="버튼" />
   </div>
 </div>
-
+</div>
 {/*--------------------------------*1페이지끝!--------------------*/}
    <div className='큰흰색박스'>
     <p className='어떻게1'>채무 1억원, 금리 12%일 때</p>

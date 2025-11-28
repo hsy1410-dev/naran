@@ -869,8 +869,9 @@ margin-left: -5px !important;
     transform: scale(0.4);
     transform-origin: top left;
     height: calc(250px * 0.4);
+    
 }
- .손, .버튼{
+ .손버튼{
       right: 50px;
   }
 }
