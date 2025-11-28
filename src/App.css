@@ -811,8 +811,9 @@ gap: 5px !important;
 
   }
   .세이미지 {
-    margin: 10px !important;
-    margin-bottom: -10px;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: -15px;
 
   }
 
