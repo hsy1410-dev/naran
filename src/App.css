@@ -678,7 +678,7 @@ margin-top: 50px;
   width: 300px;
   height: auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: block;
   margin: 0 auto;
 }
@@ -690,7 +690,7 @@ margin-top: 50px;
   position: absolute;
   top: 50px;
   left: 250px;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* 📱 모바일 완성본 적용 (너가 올린 디자인 그대로) */
@@ -932,6 +932,7 @@ margin-top: 50px;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  z-index: 1;
 }
 @media (max-width: 680px) {
   .말풍선묶음 {
