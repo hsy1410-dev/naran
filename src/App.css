@@ -807,12 +807,12 @@ margin-top: 50px;
   .세이미지 img{
     width:28vw;
 max-width:180px;
-margin-left: 20px !important;
-    margin-right: 20px !important;
+margin-left: -5px !important;
+    margin-right: -5px !important;
 
   }
   .세이미지 {
-    margin-bottom: -8px;
+    margin-bottom: -10px;
 
   }
 
