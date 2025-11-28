@@ -156,33 +156,7 @@ border-top-right-radius: 30px;
   margin-top: 30px;
   margin-bottom: 80px;
 }
-.말풍선묶음 {
-  position: relative; 
-  width: 300px;       /* 두 말풍선이 들어갈 고정폭 */
-  margin: 0 auto; 
-  left: -100px; 
-  margin-bottom: 70px;   /* ⭐ 화면 가운데 정렬 */
-}
 
-/* 왼쪽 말풍선 */
-.말1 {
-  width: 300px;
-  height: auto;
-  position: relative;
-  z-index: 1;
-  display: block;
-  margin: 0 auto;     /* ⭐ 가운데 정렬 */
-}
-
-/* 오른쪽 말풍선 */
-.말2 {
-  width: 300px;
-  height: auto;
-  position: absolute;
-  top: 50px;          /* 겹치는 정도 */
-  left: 250px;         /* ⭐ 오른쪽으로 너무 안 치우치게 적당히 */
-  z-index: 2;
-}
 .canvas-wrap {
   width: 1500px;
   height: 250px;
