@@ -926,7 +926,13 @@ margin-top: 50px;
     width: clamp(24px, 5vw, 40px);   /* 화살표도 축소 */
   }
 }
-
+.말풍선묶음 {
+  position: relative !important;
+  margin: 0 auto 40px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 @media (max-width: 680px) {
   .말풍선묶음 {
     width: 100% !important;
