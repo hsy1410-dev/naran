@@ -855,21 +855,63 @@ margin-top: 50px;
   }
 
 }
-/* 공통 (PC 레이아웃 그대로) */
-.말풍선묶음 {
-  position: relative;
-  width: 800px;      /* PC에서 쓰던 값 */
-  margin: 0 auto;
-  /* flex로 세로 정렬하고 싶지 않으면 flex 빼기 */
-}
-
-.말1, .말2 {
-  position: absolute;   /* PC에서 쓰던 위치 방식 그대로 */
-  /* top / left 값도 PC에서 쓰던 거 그대로 */
-}
 @media (max-width: 768px) {
-  .말풍선묶음 {
-    transform: scale(0.7);         /* 원하는 비율 */
-    transform-origin: top center;  /* 위쪽 가운데 기준으로 줄이기 */
+  .초록네모 {
+    flex-direction: column;   /* 세로로 쌓이게 */
+    align-items: center;
+    justify-content: center;
+    width: 90%;               /* 모바일에서 카드 좀 더 넓게 */
+    padding: 24px 16px;       /* 좌우 패딩 줄이기 */
+  }
+
+  .왼쪽 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .왼쪽 img {
+    width: 45vw;          /* 모바일에서는 더 작게 */
+    max-width: 220px;
+    min-width: 140px;
+  }
+
+  .오른쪽전체 {
+    margin-left: 0;       /* 가로 여백 제거 (가운데 정렬) */
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .title {
+    font-size: 22px;      /* 모바일에서 너무 크지 않게 고정 */
+  }
+
+  .sub {
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .smallText {
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  /* 점 위치 모바일에서 깨지면 정렬 초기화 */
+  .점 {
+    position: static;
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+  .화살표영역 {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .화살표영역 .arrow {
+    width: 48px;   /* 모바일에서 살짝 줄인 화살표 */
   }
 }
