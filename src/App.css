@@ -708,44 +708,58 @@ margin-top: 50px;
 
   /* ===== 🔥 상단 말풍선 ===== */
 /* ✅ 공통: PC 기준 가로 2개, 중앙 정렬 */
+/* PC + 공통 */
 .말풍선묶음 {
   position: relative;
   display: flex;
-  flex-direction: row;       /* 가로 고정 */
-  justify-content: center;   /* 가운데 정렬 */
+  flex-direction: row;       
+  justify-content: center;   
   align-items: center;
-  gap: 16px;                 /* 말풍선 사이 간격 */
+  gap: 16px;                 
   margin: 0 auto 20px;
   width: 100%;
 }
 
-/* ✅ 말풍선 개별 (PC 기준 크기) */
+/* 이미지 기본 스타일 */
 .말1,
 .말2 {
   display: block;
-  width: 260px;              /* PC */
-  max-width: 260px;
+  width: 260px;
   height: auto;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* ✅ 모바일: 구조는 그대로, 크기만 줄이고 '최소 높이'를 강제 */
+/* 모바일 */
 @media (max-width: 768px) {
   .말풍선묶음 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
     margin: 0 auto 16px;
     width: 100%;
-    min-height: 120px;       /* 🔹 박스가 너무 작아지지 않게 최소 높이 강제 */
+    min-height: 120px;
+    overflow: visible !important;
   }
 
   .말1,
   .말2 {
-    display: block;
-    width: 130px;            /* 🔹 모바일용 축소 크기 */
-    max-width: 130px;
-    height: auto;
+    display: block !important;
+    width: 140px !important;   /* 모바일에서 더 보기 좋음 */
+    height: auto !important;
+    opacity: 1 !important;     /* hidden 무시 */
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* 숨김 클래스 무효화 */
+  .말풍선묶음 .hidden {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: block !important;
   }
 }
 
