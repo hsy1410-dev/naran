@@ -1035,12 +1035,12 @@ margin-left: -5px !important;
 /* ZERO 리셋 + 화살표 */
 .제목줄 {
    position: relative;
-  left: -8vw;
+  left: -4vw;
   top: 7vw;
 }
 .sub {
    position: relative;
-  left: -8vw;
+  left: -4vw;
   font-size: 7vw;
   margin-top: 4px;
 }
@@ -1052,7 +1052,7 @@ margin-left: -5px !important;
 /* 단 한번의 클릭으로 새 출발! */
 .smallText {
    position: relative;
-  left: -8vw;
+  left: -4vw;
   margin-bottom: 10px;
   font-size: 4vw;
 }
