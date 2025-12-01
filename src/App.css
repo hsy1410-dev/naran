@@ -136,7 +136,7 @@ border-top-right-radius: 30px;
 .만나 {
   font-size: 3.2rem;         /* PC 기준 50px = 16px × 3.125 */
   font-weight: 700;
-  color: rgb(73, 161, 121);
+  color: rgb(92, 164, 132);
   margin: 0;
 }
 
@@ -160,6 +160,7 @@ border-top-right-radius: 30px;
 
   .만나 {
     margin-top: -5px;
+    margin-bottom: -5px;
   }
 }
 .세이미지{
