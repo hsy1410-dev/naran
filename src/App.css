@@ -1084,7 +1084,7 @@ margin-left: 20px;
   margin-top: -3px;
 }
 input[type="checkbox"] {
-  transform: scale(0.8); /* 크기 80% */
+  transform: scale(0.7); /* 크기 80% */
   transform-origin: center;
 }
 }
