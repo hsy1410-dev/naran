@@ -42,19 +42,38 @@ function App() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!form.agree) {
-      alert("개인정보 수집/이용에 동의해야 합니다.");
+  if (!form.agree) {
+    alert("개인정보 수집/이용에 동의해야 합니다.");
+    return;
+  }
+
+  try {
+    const res = await fetch("/api/consult", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: form.name,
+        phone: form.phone,
+        debt: form.debt,
+        monthly: form.monthly,
+        content: form.content,
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      console.error("❌ /api/consult 에러:", res.status, data);
+      alert("상담 신청 중 오류가 발생했습니다.\n잠시 후 다시 시도해 주세요.");
       return;
     }
 
-    await addDoc(collection(db, "consultRequests"), {
-      ...form,
-      createdAt: serverTimestamp(),
-    });
-
+    // 2) 성공 시 알림 + 폼 리셋
     alert("상담 신청이 완료되었습니다.");
     setForm({
       name: "",
@@ -64,13 +83,12 @@ function App() {
       content: "",
       agree: false,
     });
-  };
-  const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
+  } catch (error) {
+    console.error("❌ 네트워크 에러:", error);
+    alert("네트워크 오류가 발생했습니다.\n잠시 후 다시 시도해 주세요.");
   }
 };
+
    useEffect(() => {
   
       const observer = new IntersectionObserver(
