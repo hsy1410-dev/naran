@@ -1064,6 +1064,9 @@ margin-left: 20px;
   top: -4vw;
 }
 .감소1,.감소2{
-  font-size: 8vw;
+  font-size: 6vw;
+}
+.제로리셋{
+  font-size: 7vw;
 }
 }
