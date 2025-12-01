@@ -1045,6 +1045,7 @@ margin-left: -5px !important;
 }
 .title{
   font-size: 7vw;
+  white-space: nowrap;
 }
 
 /* 단 한번의 클릭으로 새 출발! */
