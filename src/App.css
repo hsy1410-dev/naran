@@ -1037,11 +1037,13 @@ margin-left: -5px !important;
    position: relative;
   left: -10vw;
   top: 7vw;
-  font-size: 7vw;
 }
 .sub {
    position: relative;
   left: -10vw;
+  font-size: 7vw;
+}
+.title{
   font-size: 7vw;
 }
 
