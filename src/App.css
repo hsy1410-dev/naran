@@ -909,15 +909,17 @@ margin-left: -5px !important;
     font-size: 15vw;
     white-space: nowrap;
     text-align: left;
-    left: 0vw;
+    left: 2vw;
       position: relative;
   }
   .점2 {
     font-size : 15vw;
     scale:calc(0.2);
     white-space: nowrap;
-    left: 24vw;
+    left: 0vw;
+       position: relative;
     letter-spacing: 20vw;
+    margin-bottom: 8px;
   }
   .무료상담{
     scale:calc(1.5);
