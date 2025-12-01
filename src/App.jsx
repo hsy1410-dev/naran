@@ -101,31 +101,33 @@ function App() {
   <img src={말풍선1}  className='말1 hidden fade-left'></img>
   <img src={말풍선2}  className='말2 hidden fade-right'></img>
   </div>
-   <div className="초록네모 hidden fade-up glow-box"
-   onClick={()=>scrollToSection("상담창")}>
+<div className="초록네모 hidden fade-up glow-box" onClick={() => scrollToSection("상담창")}>
 
   {/* 왼쪽 이미지 */}
   <div className="왼쪽">
-    <img src={리셋} height="150" />
+    <img src={리셋} />
   </div>
 
   {/* 오른쪽 전체 */}
   <div className="오른쪽전체">
 
-    <div className="제목영역">
-      <p className="점">● ● ● ●</p>
-      <p className="title"><span className="제로">ZERO</span> 리셋</p>
-      <p className="sub">개인회생</p>
+    <p className="점">● ● ● ●</p>
+
+    {/* ZERO 리셋 + 화살표 */}
+    <div className="제목줄">
+      <p className="title">
+        <span className="제로">ZERO</span> 리셋
+      </p>
+      <img src={화살표} className="화살표 pulse" />
     </div>
 
+    <p className="sub">개인회생</p>
     <p className="smallText">단 한번의 클릭으로 새 출발!</p>
-  </div>
 
-  {/* 화살표 이미지 — 오른쪽 끝 고정 */}
-  <div className="화살표영역 pulse">
-    <img src={화살표} className="arrow" width="30%" height="30%" />
   </div>
 </div>
+
+
 <div className='흰색박스 hidden fade-up'>
   <p className='개인'>개인회생 전문 로펌</p>
   <p className='만나'>나란을 만나보세요!</p>
@@ -138,18 +140,16 @@ function App() {
 ></img>
 </div>
 </div>
-
-  <div className="까만박스">
-    <div className="canvas-wrap">
-    <p className="점2">● ●●</p>
-    <p className="오직">오직 이 링크에서만</p>
-    <img src={무료상담} className="무료상담" />
-    <div className="손버튼">
-    <img src={손} className="손" />
-    <img src={버튼} className="버튼" />
+<div class="까만박스">
+  <div class="canvas-wrap">
+    <p class="점2">● ●●</p>
+    <p class="오직">오직 이 링크에서만</p>
+    <img src={무료상담} class="무료상담" />
+    <img src={손} class="손" />
+    <img src={버튼} class="버튼 pulse" />
   </div>
 </div>
-</div>
+
 {/*--------------------------------*1페이지끝!--------------------*/}
    <div className='큰흰색박스'>
     <p className='어떻게1'>채무 1억원, 금리 12%일 때</p>
@@ -205,7 +205,7 @@ function App() {
   <p className='구구'>법무법인 나란 제로리셋 개인회생 인가율은 <span className='구구스팬'>99.9%</span>입니다.</p>
 <img src={그림자}></img>
     </div>
-  <div className="상담창">
+  <div className="상담창" id="상담창">
  <p className="상담제목">지금 바로 상담 받아보세요!</p>
     <p className="상담서론1">법무법인 나란은 다양한 성공사례로</p>
     <p className="상담서론2">고객님에게 알맞는 맞춤 컨설팅을 제공해 드립니다.</p>

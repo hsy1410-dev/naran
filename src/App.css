@@ -43,7 +43,8 @@ flex-direction: column;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;  /* 왼쪽 정렬 */
+  gap: 40px; /* 요소 간 기본 간격 */
 
   padding: 20px 40px;
   margin: 0 auto;
@@ -52,67 +53,79 @@ flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-
-
-/* 왼쪽 이미지 */
 .왼쪽 img {
-  width: 20vw;     /* ⭐ 고정 px → 반응형 vw 로 변환 */
-  max-width: 240px;
-  min-width: 160px;
+  width: clamp(120px, 18vw, 260px);
   height: auto;
+  margin-right: clamp(20px, 3vw, 50px);
 }
 
-/* 가운데 텍스트 전체 */
+/* 오른쪽 텍스트 영역 */
 .오른쪽전체 {
-  flex: 1;
-  margin-left: 3vw;   /* ⭐ 고정 50px → 반응형 */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(8px, 1vw, 16px);
   color: white;
+  text-align: left;
+  line-height: 1.2;
 }
 
-/* 제목 */
-.title {
-  font-size: clamp(28px, 4vw, 52px); /* ⭐ 화면 크기에 따라 자동 조절 */
-  font-weight: 900;
+/* ●●●● */
+.점 {
+  font-size: clamp(14px, 1.8vw, 24px);
+  margin: 0;
   text-align: left;
+  scale:calc(0.8);
+  letter-spacing: 5px;
+  margin-bottom: -20px;
+  margin-left: -30px;
+  
+}
+
+/* ZERO 리셋 + 화살표 */
+.제목줄 {
+  display: flex;
+  align-items: left;
+  gap: clamp(10px, 1.5vw, 26px);
+}
+
+.title {
+  font-size: clamp(34px, 4vw, 60px);
+  font-weight: 900;
+  margin: 0;
 }
 
 .제로 {
   color: aquamarine;
 }
 
-.점 {
-  font-size: clamp(10px, 1.8vw, 25px);
-  position: relative;
-  top: 5px;
-  left: -4vw;
-  text-align: left;
-}
-
-/* 부제 */
-.sub {
-  font-size: clamp(22px, 3.2vw, 46px); 
-  font-weight: 700;
-  margin-top: -5px; /* 강한 -20px 제거 */
-  text-align: left;
-}
-
-/* 아래 문장 */
-.smallText {
-  font-size: clamp(16px, 2vw, 26px);
-  color: #e9e9e9;
-  margin-top: -5px;
-  text-align: left;
-}
-
-/* 오른쪽 화살표 */
-.화살표영역 .arrow {
-  width: clamp(40px, 6vw, 80px);
+.화살표 {
+  width: clamp(40px, 5vw, 80px);
   height: auto;
-  display: block;
 }
+
+/* 개인회생 */
+.sub {
+  font-size: clamp(26px, 3vw, 48px);
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+  margin-top: -30px;
+}
+
+/* 단 한번의 클릭으로 새 출발! */
+.smallText {
+  font-size: clamp(16px, 1.8vw, 24px);
+  margin: 0;
+  color: #e8e8e8;
+  text-align: left;
+}
+/* 모바일에서 화살표를 더 왼쪽으로 붙이고 싶으면 여기 조절 */
+@media (max-width: 768px) {
+  .제목줄 {
+    gap: clamp(4px, 1vw, 14px); /* 모바일용 — 더 타이트하게 */
+  }
+}
+
 .흰색박스 {
   background-color: #ffffff;
  border-top-left-radius: 30px;
@@ -692,7 +705,38 @@ margin-top: 50px;
   left: 250px;
   z-index: 3;
 }
+@media (max-width: 680px) {
 
+  .말풍선묶음 {
+    position: relative;
+    width: 100%;
+    left: 0;                     /* 밀림 제거 */
+    margin: 20px auto 40px;
+
+    display: flex;               /* 나란히 배치 */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* 말풍선 둘 다 absolute 해제 → flex 안에서 정상 등장 */
+  .말1,
+  .말2 {
+    position: relative;
+    width: 50vw;                 /* 화면 기준 자동 크기 */
+    max-width: 200px;            /* 너무 커지지 않도록 안전 */
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+  .말1{
+    top: 20px;
+    left: -60px;
+  }
+  .말2{
+    left: 150px !important;
+  }
+}
 /* 📱 모바일 완성본 적용 (너가 올린 디자인 그대로) */
 @media (max-width: 680px) {
 
@@ -710,28 +754,9 @@ margin-top: 50px;
     height: auto;
   }
 
-  .말풍선묶음 {
-    position: relative;
-    left: 0;                  /* -100px 보정 제거 */
-    width: 100%;
-    margin: 20px auto 40px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-  }
 .흰색박스 {
   width:100%;
 }
-  .말1,
-  .말2 {
-    position: relative;       /* absolute 해제 → 둘 다 보이게 */
-    width: 150px;
-    max-width: 150px;
-    height: auto;
-  }
-
 
 
 
@@ -754,7 +779,7 @@ margin-top: 50px;
   }
 
   .오른쪽전체 {
-    margin-left: 0;
+    margin-left: -10vw;
   }
 
   .점{
@@ -871,8 +896,30 @@ margin-left: -5px !important;
     height: calc(250px * 0.4);
     
 }
- .손버튼{
-      right: 50px;
+ .손{
+      left: 950px;
+      z-index: 3 !important;
+  }
+  .버튼{
+    z-index: 2;
+      left: 850px;
+  }
+  .오직{
+    font-size: 15vw;
+    white-space: nowrap;
+    text-align: left;
+    left: 14vw;
+  }
+  .점2 {
+    font-size : 15vw;
+    scale:calc(0.4);
+    white-space: nowrap;
+    left: 24vw;
+    letter-spacing: 10vw;
+  }
+  .무료상담{
+    scale:calc(1.3);
+    margin-top: 6vw;
   }
 }
 @media (max-width: 480px) {
@@ -884,22 +931,12 @@ margin-left: -5px !important;
 
 }
 
-@media (max-width: 768px) {
-  .초록네모 {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-  }
-}
 /* ✅ 모바일에서만 전체 크기 축소 + 가로 구조 유지 */
 @media (max-width: 768px) {
   .초록네모 {
     width: 90%;                      /* 70% → 화면 거의 꽉 차게 */
     max-width: 360px;                /* 카드 자체를 더 작게 */
     padding: 12px 16px;              /* 안쪽 여백 축소 */
-    
     display: flex !important;
     flex-direction: row !important;  /* 세로 정렬 방지 */
     align-items: center;
@@ -907,13 +944,14 @@ margin-left: -5px !important;
   }
 
   .왼쪽 img {
-    width: 26vw;         /* 20vw → 살짝 키우지만 max 축소 */
-    max-width: 140px;    /* 240px → 줄이기 */
-    min-width: 100px;    /* 160px → 줄이기 */
+    width: 20vw;         /* 20vw → 살짝 키우지만 max 축소 */
+    max-width: 120px;    /* 240px → 줄이기 */
+    min-width: 90px;    /* 160px → 줄이기 */
+    left: 5vw !important;
   }
 
   .오른쪽전체 {
-    margin-left: 2vw;    /* 3vw → 줄이기 */
+    margin-left: -5vw;    /* 3vw → 줄이기 */
     gap: 6px;            /* 10px → 줄이기 */
   }
 
@@ -924,7 +962,7 @@ margin-left: -5px !important;
   .점 {
     font-size: clamp(8px, 1.4vw, 14px);
     top: 3px;
-    left: -0.5vw;
+    left: 1vw;
   }
 
   .sub {
@@ -935,11 +973,88 @@ margin-left: -5px !important;
   .smallText {
     font-size: clamp(12px, 1.8vw, 16px);
     margin-top: -2px;
+    white-space: nowrap;
   }
 
   .화살표영역 .arrow {
-    width: clamp(24px, 5vw, 40px);   /* 화살표도 축소 */
+    width:10vw;   /* 화살표도 축소 */
+    left: -5vw;
   }
 }
 /* ✅ 말풍선 강제 리셋 + PC/모바일 공통 가로 나란히 정렬 */
+  @media (max-width: 680px) {
+  .말풍선묶음,
+  .말1,
+  .말2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+@media (max-width: 680px) {
+  .말1, .말2 {
+    position: relative !important;
+    transform: none !important;
+  }
+  .배너 {
+    margin-top: -10px;
+  }
+  .회생1,.회생2{
+    white-space: nowrap;
+    scale:calc(0.9);
+  }
+  .밑화살표{
+    margin-top: -15px;
+  }
+  .구구{
+    white-space: nowrap;
+    font-size: 14px;
+    margin-bottom: 45px;
+    margin-top: -20px;
+  }
+  .구구스팬{
+    font-size: 20px;
+  }
+  .상담서론1, .상담서론2{
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .화살표영역 {
+    margin-left: -40px !important;
+  }
+  .점 {
+   position: relative;
+  left: -6vw;
+  top: 4vw;
+  letter-spacing: 1.5px;
   
+}
+
+/* ZERO 리셋 + 화살표 */
+.제목줄 {
+   position: relative;
+  left: -10vw;
+  top: 7vw;
+}
+.sub {
+   position: relative;
+  left: -10vw;
+}
+
+/* 단 한번의 클릭으로 새 출발! */
+.smallText {
+   position: relative;
+  left: -10vw;
+}
+.화살표{
+  width: 8vw;
+  top: 4vw;
+  left: 6vw;
+margin-left: 20px;
+}
+.오른쪽전체{
+  position: relative;
+  top: -4vw;
+}
+}
