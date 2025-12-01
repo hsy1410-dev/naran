@@ -987,8 +987,7 @@ margin-left: -5px !important;
   .말1,
   .말2 {
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+
   }
 }
 @media (max-width: 680px) {
