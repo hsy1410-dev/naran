@@ -1087,4 +1087,7 @@ input[type="checkbox"] {
   transform: scale(0.7); /* 크기 80% */
   transform-origin: center;
 }
+.투명 img{
+  margin-bottom: 20px;
+}
 }
