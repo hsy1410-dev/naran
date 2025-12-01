@@ -1,8 +1,6 @@
 // api/consult.js
 const { google } = require("googleapis");
 
-// Node 18 환경에서 fetch는 글로벌로 존재 (별도 import 불필요)
-
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method Not Allowed" });
@@ -11,7 +9,10 @@ module.exports = async (req, res) => {
   try {
     const { name, phone, debt, monthly, content } = req.body || {};
 
-    // 🔐 1) Telegram 알림 보내기
+    // 0) 요청 들어오는지 확인
+    console.log("📥 /api/consult 호출됨:", { name, phone, debt, monthly });
+
+    // 1) Telegram 알림 보내기
     const text =
       `📩 신규 상담 요청\n` +
       `────────────────────\n` +
@@ -23,16 +24,30 @@ module.exports = async (req, res) => {
       `────────────────────\n` +
       `⏰ 시간: ${new Date().toLocaleString("ko-KR")}`;
 
-    await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: process.env.TELEGRAM_CHAT,
-        text,
-      }),
-    });
+    const tgRes = await fetch(
+      `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: process.env.TELEGRAM_CHAT,
+          text,
+        }),
+      }
+    );
 
-    // 🔐 2) Google Sheets에 기록
+    const tgData = await tgRes.json().catch(() => ({}));
+    console.log("📨 Telegram 응답:", tgRes.status, tgData);
+
+    if (!tgRes.ok) {
+      throw new Error(
+        `Telegram API Error: ${tgRes.status} ${
+          tgData?.description || ""
+        }`.trim()
+      );
+    }
+
+    // 2) Google Sheets에 기록
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_EMAIL,
@@ -45,7 +60,7 @@ module.exports = async (req, res) => {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET,
-      range: "상담!A:F", // 시트 이름!범위
+      range: "상담!A:F",
       valueInputOption: "RAW",
       requestBody: {
         values: [
