@@ -908,7 +908,7 @@ margin-left: -5px !important;
   .오직{
     font-size: 15vw;
     white-space: nowrap;
-    text-align: left;
+    text-align: left !important;
     left: -1vw;
       position: relative;
   }
