@@ -928,6 +928,8 @@ margin-left: -5px !important;
     transform: scale(0.3);
     transform-origin: top left;
     height: calc(250px * 0.3);
+    position: relative;
+    left: 50px;
   }
 
 }
