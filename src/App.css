@@ -1025,9 +1025,9 @@ margin-left: -5px !important;
   }
   .점 {
    position: relative;
-  left: -6vw;
+  left: -2vw;
   top: 4vw;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   margin-top: 10px;
   
 }
@@ -1035,12 +1035,12 @@ margin-left: -5px !important;
 /* ZERO 리셋 + 화살표 */
 .제목줄 {
    position: relative;
-  left: -4vw;
+  left: -2vw;
   top: 7vw;
 }
 .sub {
    position: relative;
-  left: -4vw;
+  left: -2vw;
   font-size: 7vw;
   margin-top: 4px;
 }
@@ -1052,7 +1052,7 @@ margin-left: -5px !important;
 /* 단 한번의 클릭으로 새 출발! */
 .smallText {
    position: relative;
-  left: -4vw;
+  left: -2vw;
   margin-bottom: 10px;
   font-size: 4vw;
 }
