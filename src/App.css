@@ -1057,8 +1057,9 @@ margin-left: -5px !important;
   font-size: 4vw;
 }
 .화살표{
+  position: relative;
   width: 8vw;
-  top: 8vw;
+  top: 5vw;
   left: 6vw;
 margin-left: 20px;
 }
