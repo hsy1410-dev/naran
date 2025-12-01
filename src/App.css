@@ -909,6 +909,8 @@ margin-left: -5px !important;
     font-size: 15vw;
     white-space: nowrap;
     text-align: left !important;
+    left: -10vw;
+    position: relative;
   }
   .점2 {
     font-size : 15vw;
