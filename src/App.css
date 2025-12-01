@@ -13,7 +13,7 @@ body,
   width: 100%;
   height: 100%; /* 부모가 100%여야 vh가 제대로 먹어 */
   box-sizing: border-box;
-  font-family: "pretendard";
+  font-family: "pretendard","Apple SD 산돌고딕 Neo";
   color: rgb(42, 41, 41) ;
 }
 
