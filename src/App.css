@@ -913,13 +913,13 @@ margin-left: -5px !important;
   }
   .점2 {
     font-size : 15vw;
-    scale:calc(0.4);
+    scale:calc(0.2);
     white-space: nowrap;
     left: 24vw;
     letter-spacing: 10vw;
   }
   .무료상담{
-    scale:calc(1.3);
+    scale:calc(1.5);
     margin-top: 6vw;
   }
 }
