@@ -51,6 +51,7 @@ const handleSubmit = async (e) => {
   }
 
   try {
+    // 1) 서버 API로 전송 (텔레그램 + 구글 시트)
     const res = await fetch("/api/consult", {
       method: "POST",
       headers: {
