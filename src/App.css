@@ -203,11 +203,12 @@ border-top-right-radius: 30px;
 /* 점 3개 */
 .점2 {
   position: absolute;
-  font-size: 25px;      /* 점 크기 */
+  font-size: 10px;      /* 점 크기 */
   color: white;
   left: 250px;          /* 오직과 동일한 X 좌표 */
   top: 5px;             /* 오직 top(40px) - 35px */
   margin: 0;
+  letter-spacing: 10px;
 }
 
 /* 오직 텍스트 */
@@ -242,7 +243,7 @@ border-top-right-radius: 30px;
   width: 220px;
   height: auto;
   position: absolute;
-  left: 1000px;
+  left: 1100px;
   top: 40px;
 }
 
