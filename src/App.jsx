@@ -23,7 +23,12 @@ import 원금 from"./pageicon/2page/mae.png"
 import 밑화살표 from"./pageicon/3page/white.png"
 import 그림자 from"./pageicon/3page/bk.png"
 import 자물쇠 from"./pageicon/3page/lock.jpeg"
-
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
 function App() {
   const [form, setForm] = useState({
     name: "",
