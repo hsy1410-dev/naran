@@ -101,9 +101,14 @@ flex-direction: column;
 .화살표 {
   width: clamp(40px, 5vw, 80px);
   height: auto;
-  margin-left: 60px;
-}
+  margin-left: 90px;
 
+}
+@media (max-width: 2000px){
+.화살표 {
+  margin-left: 200px;
+}
+}
 /* 개인회생 */
 .sub {
   font-size: clamp(26px, 3vw, 48px);
