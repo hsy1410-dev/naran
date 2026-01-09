@@ -986,7 +986,9 @@ margin-left: -5px !important;
     margin-top: -2px;
     white-space: nowrap;
   }
-
+.화살표{
+margin-left: 0px;
+}
   .화살표영역 .arrow {
     width:10vw;   /* 화살표도 축소 */
     left: -5vw;
