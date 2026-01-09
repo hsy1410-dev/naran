@@ -205,7 +205,7 @@ border-top-right-radius: 30px;
   position: absolute;
   font-size: 10px;      /* 점 크기 */
   color: white;
-  left: 250px;          /* 오직과 동일한 X 좌표 */
+  left: 230px;          /* 오직과 동일한 X 좌표 */
   top: 35px;             /* 오직 top(40px) - 35px */
   margin: 0;
   letter-spacing: 26px;
