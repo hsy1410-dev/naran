@@ -101,6 +101,7 @@ flex-direction: column;
 .화살표 {
   width: clamp(40px, 5vw, 80px);
   height: auto;
+  margin-left: 60px;
 }
 
 /* 개인회생 */
